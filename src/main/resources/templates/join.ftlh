@@ -12,9 +12,11 @@
     <h3> Password </h3> <input type="password" name="inputPwd1">
     <h3> Validate Password </h3> <input type="password" name="inputPwd2">
     <h3> Email </h3> <input type="email" name="email">
+    <h3> Phone Number </h3> <input type="tel" name="phoneNumber">
+    <br/><br/>
     <input type="submit" value="Sign up for SimpleBoard">
+
 </form>
-<br/><br/>
 
 </body>
 </html>

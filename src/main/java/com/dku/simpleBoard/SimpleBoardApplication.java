@@ -8,5 +8,4 @@ public class SimpleBoardApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SimpleBoardApplication.class, args);
 	}
-
 }

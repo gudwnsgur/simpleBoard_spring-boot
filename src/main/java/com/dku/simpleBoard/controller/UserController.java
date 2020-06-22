@@ -14,15 +14,17 @@ public class UserController {
 
     @PostMapping("/join")
     public String join(Model model,
-                       @RequestParam(value = "inputId", required = false) String inputId,
-                       @RequestParam(value = "inputPwd1", required = false) String inputPwd1,
-                       @RequestParam(value = "inputPwd2", required = false) String inputPwd2,
-                       @RequestParam(value = "email", required = false) String email
+                       @RequestParam(value = "inputId") String inputId,
+                       @RequestParam(value = "inputPwd1") String inputPwd1,
+                       @RequestParam(value = "inputPwd2") String inputPwd2,
+                       @RequestParam(value = "email") String email,
+                       @RequestParam(value = "phoneNumber") String phoneNumber
     ) {
         model.addAttribute("id", inputId);
         model.addAttribute("pwd1", inputPwd1);
         model.addAttribute("pwd2", inputPwd2);
         model.addAttribute("email", email);
+        model.addAttribute("phoneNumber", phoneNumber);
 
         if (!inputPwd1.equals(inputPwd2)) {
             return "join";
