@@ -5,16 +5,16 @@
     <title>join page</title>
 </head>
 <body>
-<h1> join page</h1>
+<h2> Sign Up </h2>
 
-<h3> UserName </h3> <input type="text" name="inputId">
-<h3> Password </h3> <input type="password" name="pwd1">
-<h3> Validate Password </h3> <input type="password" name="pwd2">
-<h3> Email </h3> <input type="email" name="email">
-
-<a href="http://localhost:8081/login/post">
-    <input type="button" value="Sign up for SimpleBoard">
-</a> <br/><br/>
+<form name="join" action="join" method="post">
+    <h3> UserName </h3> <input type="text" name="inputId">
+    <h3> Password </h3> <input type="password" name="inputPwd1">
+    <h3> Validate Password </h3> <input type="password" name="inputPwd2">
+    <h3> Email </h3> <input type="email" name="email">
+    <input type="submit" value="Sign up for SimpleBoard">
+</form>
+<br/><br/>
 
 </body>
 </html>

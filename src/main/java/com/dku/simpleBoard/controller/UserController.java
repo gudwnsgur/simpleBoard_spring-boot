@@ -12,22 +12,21 @@ public class UserController {
         return "join";
     }
 
-    @PostMapping("/join/post")
-    public String postJoin(Model model,
-                           @RequestParam(value = "inputId") String inputId,
-                           @RequestParam(value = "inputPwd1") String inputPwd1,
-                           @RequestParam(value = "inputPwd2") String inputPwd2,
-                           @RequestParam(value = "email", required = false) String email
+    @PostMapping("/join")
+    public String join(Model model,
+                       @RequestParam(value = "inputId", required = false) String inputId,
+                       @RequestParam(value = "inputPwd1", required = false) String inputPwd1,
+                       @RequestParam(value = "inputPwd2", required = false) String inputPwd2,
+                       @RequestParam(value = "email", required = false) String email
     ) {
         model.addAttribute("id", inputId);
         model.addAttribute("pwd1", inputPwd1);
         model.addAttribute("pwd2", inputPwd2);
         model.addAttribute("email", email);
 
-        if(!inputPwd1.equals(inputPwd2)) {
+        if (!inputPwd1.equals(inputPwd2)) {
             return "join";
-        }
-        else {
+        } else {
             return "index";
         }
     }
