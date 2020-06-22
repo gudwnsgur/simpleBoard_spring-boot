@@ -16,6 +16,11 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<orgFreemarker.version>2.3.30</orgFreemarker.version>
+		<springDataCommons.version>2.3.1.RELEASE</springDataCommons.version>
+		<MyBatis.version>3.4.6</MyBatis.version>
+		<MyBatisSpring.version>2.0.3</MyBatisSpring.version>
+		<MySQLConnectorJava.version>8.0.18</MySQLConnectorJava.version>
 	</properties>
 
 	<dependencies>
@@ -48,20 +53,42 @@
 		<dependency>
 			<groupId>org.freemarker</groupId>
 			<artifactId>freemarker</artifactId>
-			<version>2.3.30</version>
+			<version>${orgFreemarker.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-freemarker</artifactId>
 		</dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-commons</artifactId>
+            <version>${springDataCommons.version}</version>
+        </dependency>
 
-<!--
+        <!-- MyBatis -->
+		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-rest</artifactId>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>${MyBatis.version}</version>
 		</dependency>
--->
+
+		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>${MyBatisSpring.version}</version>
+		</dependency>
+
+		<!-- MySQL -->
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${MySQLConnectorJava.version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
