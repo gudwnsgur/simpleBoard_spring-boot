@@ -1,0 +1,12 @@
+1. controller -> tamplate(freemarker) 데이터 전달하는 법
+ (0). import org.springframework.ui.Model;
+ (1). controller에서 매개변수에 Model model 추가
+ (2). 코드 : model.addAttribute("id", inputId);
+ (3). ftlh 파일에서 <h3>My ID : ${id}</h3> 와 같이 id 사용
+
+
+2. template(freemarker)에서 받은 정보를 controller post에 전달하는 법
+  (1). <form name=" " action= "post에 해당하는 함수의 url" method="post">
+  (2). 이 안에 넘겨야 할 내용을 name으로 추가
+  (3). <input type="submit" value="버튼의 내용">
+
