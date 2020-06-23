@@ -5,7 +5,7 @@
     <title>join page</title>
 </head>
 <body>
-<h2> Sign Up </h2>
+<h2>Sign Up</h2>
 
 <form name="join" action="join" method="post">
     <h3> UserName </h3> <input type="text" name="inputId">
