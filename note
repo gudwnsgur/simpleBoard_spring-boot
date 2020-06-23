@@ -11,3 +11,13 @@
   (3). <input type="submit" value="버튼의 내용">
 
 
+.dao : db와 연동할 mapper및 dao interface를 모아둔 package
+.dto : db table의 model class(dto)를 모아둔 package
+
+3.
+spring.datasource.url=jdbc:mysql://localhost:3306/{스키마명}?autoReconnect=true&useSSL=false
+spring.datasource.username={username}
+spring.datasource.password={userpassword}
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+ ==> AWS RDS를 사용하는 경우 RDS의 endpoint&port를 작성
+
