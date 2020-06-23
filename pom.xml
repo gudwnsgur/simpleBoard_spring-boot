@@ -22,6 +22,7 @@
         <MyBatisSpring.version>2.0.3</MyBatisSpring.version>
         <MyBatisSpringBoot.version>2.0.1</MyBatisSpringBoot.version>
         <MySQLConnectorJava.version>8.0.18</MySQLConnectorJava.version>
+        <jdbc.version>2.3.0.RELEASE</jdbc.version>
     </properties>
 
     <dependencies>
@@ -65,6 +66,12 @@
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-commons</artifactId>
             <version>${springDataCommons.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+            <version>${jdbc.version}</version>
         </dependency>
 
         <!-- MyBatis -->
