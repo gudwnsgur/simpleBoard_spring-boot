@@ -3,7 +3,7 @@ package com.dku.simpleBoard.dto;
 import org.apache.ibatis.type.Alias;
 
 @Alias("userDto")
-public class UserDto {
+public class UserDTO {
     public String userId, userPwd, userName, userEmail, userTell;
 
     public String getUserId() { return userId; }

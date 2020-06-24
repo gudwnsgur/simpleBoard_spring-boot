@@ -21,3 +21,18 @@ spring.datasource.password={userpassword}
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
  ==> AWS RDS를 사용하는 경우 RDS의 endpoint&port를 작성
 
+
+4. spring DB 관련 용어
+    (0). JDBC : Java DB Connectivity -> MyBatis 로 JDBC를 편하게 사용 가능
+    (1). hikariCP : spring boot 2.0부터 default JDBC connection pool
+    (2). h2 : JAVA 기반 오픈소스 RDBMS
+    (3). JPA : JAVA Persistence API(자바 ORM 기술에 대한 표준 명세)
+                => ORM을 위한 자바 표준
+
+5. SQL Mapper(MyBatis, jdbcTemplates) vs. ORM(Object-Relational Mapping : JPA, Hibernate)
+
+
+6.MyBatis 설정
+    (1) MyBatis 환경설정 파일(SqlSessionConfig.xml)
+        => TypeAlias(별칭설정) & DB연동 설정 & Mapper 설정파일 등록
+    (2) Mapper 설정 파일(member.xml, company.xml)

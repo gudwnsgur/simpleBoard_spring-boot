@@ -1,5 +1,6 @@
 package com.dku.simpleBoard.controller;
 
+import com.dku.simpleBoard.dao.UserDAO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
@@ -40,5 +41,10 @@ public class UserController {
         if (user.equals(inputId)) {
             return "index";
         } else return "acdvadvda";
+    }
+
+    @GetMapping("/users/admin")
+    public String adminUser(Model model) {
+        model.addAttribute("id", UserDAO.getUsersInfo())
     }
 }
