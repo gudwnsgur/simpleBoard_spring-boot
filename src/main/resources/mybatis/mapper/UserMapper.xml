@@ -4,8 +4,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<mapper namespace="mybatis.mapper">
-    <resultMap id="userResult" type="com.dku.simpleBoard.dto.UserDTO">
+<mapper namespace="com.dku.simpleBoard.mapper.UserMapper">
+    <resultMap id="userMap" type="com.dku.simpleBoard.dto.UserDTO">
         <result column="user_id" property="userId"/>
         <result column="user_pwd" property="userPwd"/>
         <result column="user_name" property="userName"/>
@@ -13,7 +13,8 @@
         <result column="user_tel" property="userTell"/>
     </resultMap>
 
-    <select id="getAllUserInfo" resultMap="UserResult">
-        select * from users;
+    <select id="getUserList" resultType="UserDTO">
+        SELECT user_name AS userName, user_tell as userTell  FROM users;
     </select>
 </mapper>
+

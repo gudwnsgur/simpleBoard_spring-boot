@@ -1,3 +1,5 @@
+** DAO(Mapper)와 Service는 interface와 class파일이 한세트로 구성
+
 1. controller -> tamplate(freemarker) 데이터 전달하는 법
  (0). import org.springframework.ui.Model;
  (1). controller에서 매개변수에 Model model 추가
@@ -31,8 +33,51 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
 5. SQL Mapper(MyBatis, jdbcTemplates) vs. ORM(Object-Relational Mapping : JPA, Hibernate)
 
+6. Spring boot & MyBatis & MySQL & HikariCP
+
+    [case 1] Controller.java - Service.java - Mapper.java - DTO.java
+                                                           - Mapper.xml
+
+    [case 2] Controller.java - Service.java - DAO.java - DTO.java
+                                                       - Mapper.xml
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 6.MyBatis 설정
     (1) MyBatis 환경설정 파일(SqlSessionConfig.xml)
         => TypeAlias(별칭설정) & DB연동 설정 & Mapper 설정파일 등록
     (2) Mapper 설정 파일(member.xml, company.xml)
+

@@ -1,29 +1,19 @@
 package com.dku.simpleBoard.dto;
 
 import org.apache.ibatis.type.Alias;
+import lombok.Getter;
+import lombok.Setter;
 
-@Alias("userDto")
+@Alias("UserDto")
+@Getter
+@Setter
 public class UserDTO {
-    public String userId, userPwd, userName, userEmail, userTell;
-
-    public String getUserId() { return userId; }
-    public String getUserPwd() { return userPwd; }
-    public String getUserName() { return userName; }
-    public String getUserEmail() { return userEmail; }
-    public String getUserTell() { return userTell; }
-
-    public void setUserId(String userId) { this.userId = userId; }
-    public void setUserPwd(String userPwd) { this.userPwd = userPwd; }
-    public void setUserName(String userName) { this.userName = userName; }
-    public void setUserEmail(String userEmail) { this.userEmail = userEmail; }
-    public void setUserTell(String userTell) { this.userTell = userTell; }
-
-    @Override
-    public String toString() {
-        return  "UserDto [userId = " + userId + "]\n"+
-                "        [userPwd = " + userPwd +"]\n"+
-                "        [userName = " + userName + "]\n"+
-                "        [userEmail = "+ userEmail+ "]\n"+
-                "        [userPhoneNumber = "+userTell+ "]";
-    }
+    private String userId;
+    private String userPwd;
+    private String userName;
+    private String userEmail;
+    private String userTell;
 }
+
+
+

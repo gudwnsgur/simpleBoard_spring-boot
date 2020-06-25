@@ -1,12 +1,18 @@
 package com.dku.simpleBoard.controller;
 
-import com.dku.simpleBoard.dao.UserDAO;
+import com.dku.simpleBoard.dto.UserDTO;
+import com.dku.simpleBoard.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
 
+import java.util.List;
+
 @Controller
 public class UserController {
+    @Autowired
+    UserService userService;
 
     @GetMapping("/join")
     public String join() {
@@ -43,8 +49,11 @@ public class UserController {
         } else return "acdvadvda";
     }
 
-    @GetMapping("/users/admin")
-    public String adminUser(Model model) {
-        model.addAttribute("id", UserDAO.getUsersInfo())
+    @GetMapping("/users")
+    public String adminUser(Model model) throws Exception {
+        List<UserDTO> userList = userService.getUserList();
+        model.addAttribute("userList", userList);
+
+        return "user";
     }
 }
