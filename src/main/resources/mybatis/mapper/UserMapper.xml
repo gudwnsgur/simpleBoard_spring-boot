@@ -5,6 +5,8 @@
 
 
 <mapper namespace="com.dku.simpleBoard.mapper.UserMapper">
+
+    <!--
     <resultMap id="userMap" type="com.dku.simpleBoard.dto.UserDTO">
         <result column="user_id" property="userId"/>
         <result column="user_pwd" property="userPwd"/>
@@ -12,7 +14,7 @@
         <result column="user_email" property="userEmail"/>
         <result column="user_tel" property="userTell"/>
     </resultMap>
-
+    -->
     <select id="getUserList" resultType="UserDTO">
         SELECT user_name AS userName, user_tell as userTell  FROM users;
     </select>
