@@ -16,4 +16,7 @@ public class UserService{
     public List<UserDTO> getUserList() {
         return mapper.getUserList();
     }
+    public void insertUser(UserDTO user) {
+        mapper.insertUser(user);
+    }
 }

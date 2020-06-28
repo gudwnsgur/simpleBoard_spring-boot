@@ -10,4 +10,5 @@ import com.dku.simpleBoard.dto.UserDTO;
 @Mapper
 public interface UserMapper {
     List<UserDTO> getUserList();
+    void insertUser(UserDTO user);
 }

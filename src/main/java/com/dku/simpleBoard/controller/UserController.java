@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Controller
@@ -24,16 +25,22 @@ public class UserController {
                        @RequestParam(value = "inputId") String inputId,
                        @RequestParam(value = "inputPwd1") String inputPwd1,
                        @RequestParam(value = "inputPwd2") String inputPwd2,
-                       @RequestParam(value = "email") String email,
-                       @RequestParam(value = "phoneNumber") String phoneNumber
+                       @RequestParam(value = "inputName") String inputName,
+                       @RequestParam(value = "inputEmail") String inputEmail,
+                       @RequestParam(value = "inputTell") String inputTell
     ) {
-        model.addAttribute("id", inputId);
-        model.addAttribute("pwd1", inputPwd1);
-        model.addAttribute("pwd2", inputPwd2);
-        model.addAttribute("email", email);
-        model.addAttribute("phoneNumber", phoneNumber);
+
 
         if (!inputPwd1.equals(inputPwd2)) {
+            UserDTO user = new UserDTO(inputId, inputPwd1, inputName, inputEmail, inputTell);
+            user.setUserId(inputId);
+            user.setUserPwd(inputPwd1);
+            user.setUserName(inputName);
+            user.setUserEmail(inputEmail);
+            user.setUserTell(inputTell);
+
+            userService.insertUser(user);
+
             return "join";
         } else {
             return "index";

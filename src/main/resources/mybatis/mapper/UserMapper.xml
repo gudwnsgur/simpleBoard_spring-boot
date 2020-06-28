@@ -5,7 +5,6 @@
 
 
 <mapper namespace="com.dku.simpleBoard.mapper.UserMapper">
-
     <!--
     <resultMap id="userMap" type="com.dku.simpleBoard.dto.UserDTO">
         <result column="user_id" property="userId"/>
@@ -18,5 +17,12 @@
     <select id="getUserList" resultType="UserDTO">
         SELECT user_name AS userName, user_tell as userTell  FROM users;
     </select>
+
+    <insert id="insertUser" parameterType="UserDTO">
+        INSERT INTO users (user_id , user_pwd ,
+                        user_name , user_email ,
+                         user_tell , user_auth)
+        VALUES (${userId}, ${userPwd}, ${userName}, ${userEmail}, ${userTell}, 0);
+    </insert>
 </mapper>
 

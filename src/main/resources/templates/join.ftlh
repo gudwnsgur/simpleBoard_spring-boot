@@ -8,11 +8,12 @@
 <h2>Sign Up</h2>
 
 <form name="join" action="join" method="post">
-    <h3> UserName </h3> <input type="text" name="inputId">
+    <h3> id </h3> <input type="text" name="inputId">
     <h3> Password </h3> <input type="password" name="inputPwd1">
     <h3> Validate Password </h3> <input type="password" name="inputPwd2">
-    <h3> Email </h3> <input type="email" name="email">
-    <h3> Phone Number </h3> <input type="tel" name="phoneNumber">
+    <h3> Name </h3> <input type="text" name="inputName">
+    <h3> Email </h3> <input type="email" name="inputEmail">
+    <h3> Phone Number </h3> <input type="tel" name="inputTell">
     <br/><br/>
     <input type="submit" value="Sign up for SimpleBoard">
 
