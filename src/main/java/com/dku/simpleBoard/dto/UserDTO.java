@@ -15,6 +15,7 @@ public class UserDTO {
     private String userEmail;
     private String userTell;
 
+    public UserDTO() { }
     public UserDTO(String userId, String userPwd, String userName,
                    String userEmail, String userTell) {
         super();
@@ -64,6 +65,7 @@ public class UserDTO {
     public void setUserTell(String userTell) {
         this.userTell = userTell;
     }
+
 }
 
 

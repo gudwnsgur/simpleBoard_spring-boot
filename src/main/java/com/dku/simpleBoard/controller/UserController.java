@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
-
 import java.util.HashMap;
 import java.util.List;
 
@@ -30,20 +29,20 @@ public class UserController {
                        @RequestParam(value = "inputTell") String inputTell
     ) {
 
-
-        if (!inputPwd1.equals(inputPwd2)) {
-            UserDTO user = new UserDTO(inputId, inputPwd1, inputName, inputEmail, inputTell);
+        if (inputPwd1.equals(inputPwd2)) {
+            UserDTO user = new UserDTO();
             user.setUserId(inputId);
             user.setUserPwd(inputPwd1);
             user.setUserName(inputName);
             user.setUserEmail(inputEmail);
             user.setUserTell(inputTell);
 
+            System.out.println(user.getUserEmail());
             userService.insertUser(user);
 
-            return "join";
-        } else {
             return "index";
+        } else {
+            return "join";
         }
     }
 
