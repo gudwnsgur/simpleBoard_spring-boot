@@ -6,10 +6,11 @@ import java.util.Date;
 
 @Alias("BoardDto")
 public class BoardDTO {
-    private String boardNo;
+    private int userNo;
     private String boardTitle;
     private String boardContent;
     private int boardViews;
+    private int boardLikes;
     private Date boardDate;
 
     public String getBoardTitle() {
@@ -44,11 +45,20 @@ public class BoardDTO {
         this.boardDate = boardDate;
     }
 
-    public String getBoardNo() {
-        return boardNo;
+
+    public int getUserNo() {
+        return userNo;
     }
 
-    public void setBoardNo(String boardNo) {
-        this.boardNo = boardNo;
+    public void setUserNo(int userNo) {
+        this.userNo = userNo;
+    }
+
+    public int getBoardLikes() {
+        return boardLikes;
+    }
+
+    public void setBoardLikes(int boardLikes) {
+        this.boardLikes = boardLikes;
     }
 }

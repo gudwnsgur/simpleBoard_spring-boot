@@ -4,5 +4,12 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.dku.simpleBoard.mapper.CommentMapper">
+    <resultMap id="commentMap" type="com.dku.simpleBoard.dto.CommentDTO">
+        <result column="board_no" property="boardNo"/>
+        <result column="user_no" property="userNo"/>
+        <result column="comment_content" property="commentContent"/>
+        <result column="comment_likes" property="commentLikes"/>
+        <result column="comment_date" property="commentDate"/>
+    </resultMap>
 
 </mapper>

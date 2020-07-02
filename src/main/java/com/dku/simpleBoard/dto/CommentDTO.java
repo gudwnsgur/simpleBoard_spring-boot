@@ -10,6 +10,7 @@ public class CommentDTO {
     private int userNo;
     private int boardNo;
     private String commentContent;
+    private int commentLikes;
     private Date commentDate;
 
     public String getCommentContent() {
@@ -42,5 +43,13 @@ public class CommentDTO {
 
     public void setBoardNo(int boardNo) {
         this.boardNo = boardNo;
+    }
+
+    public int getCommentLikes() {
+        return commentLikes;
+    }
+
+    public void setCommentLikes(int commentLikes) {
+        this.commentLikes = commentLikes;
     }
 }
