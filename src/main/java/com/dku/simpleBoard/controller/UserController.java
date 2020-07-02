@@ -37,7 +37,7 @@ public class UserController {
             user.setUserEmail(inputEmail);
             user.setUserTell(inputTell);
 
-            System.out.println(user.getUserEmail());
+            //System.out.println(user.getUserEmail());
             userService.insertUser(user);
 
             return "index";
