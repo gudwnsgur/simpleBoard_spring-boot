@@ -10,11 +10,11 @@
         <result column="user_pwd" property="userPwd"/>
         <result column="user_name" property="userName"/>
         <result column="user_email" property="userEmail"/>
-        <result column="user_tel" property="userTell"/>
+        <result column="user_tell" property="userTell"/>
     </resultMap>
 
-    <select id="getUserList" resultType="UserDTO">
-                SELECT user_name AS userName, user_tell as userTell FROM users;
+    <select id="getUserList" resultMap="userMap">
+                SELECT user_name, user_tell FROM users;
     </select>
 
     <insert id="insertUser" parameterType="UserDTO">
@@ -23,5 +23,3 @@
     </insert>
 
 </mapper>
-
-

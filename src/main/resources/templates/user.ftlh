@@ -7,7 +7,7 @@
 <body>
 <h3> user Information</h3>
 <#list userList as user>
-      ${user_index+1}  ${user.userName}      ${user.userTell}  <br/>
+      ${user_index+1}  ${user.userName}     ${user.userTell}  <br/>
 </#list>
 </h4>
 </body>
