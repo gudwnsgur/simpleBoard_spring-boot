@@ -1,6 +1,5 @@
 package com.dku.simpleBoard.dto;
 
-import org.apache.catalina.User;
 import org.apache.ibatis.type.Alias;
 import lombok.Getter;
 import lombok.Setter;
