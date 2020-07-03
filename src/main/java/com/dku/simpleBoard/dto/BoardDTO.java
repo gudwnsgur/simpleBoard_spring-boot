@@ -6,12 +6,14 @@ import java.util.Date;
 
 @Alias("BoardDto")
 public class BoardDTO {
-    private int userNo;
+    private String userName;
     private String boardTitle;
     private String boardContent;
     private int boardViews;
     private int boardLikes;
     private Date boardDate;
+
+    public BoardDTO() {}
 
     public String getBoardTitle() {
         return boardTitle;
@@ -45,20 +47,19 @@ public class BoardDTO {
         this.boardDate = boardDate;
     }
 
-
-    public int getUserNo() {
-        return userNo;
-    }
-
-    public void setUserNo(int userNo) {
-        this.userNo = userNo;
-    }
-
     public int getBoardLikes() {
         return boardLikes;
     }
 
     public void setBoardLikes(int boardLikes) {
         this.boardLikes = boardLikes;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }
