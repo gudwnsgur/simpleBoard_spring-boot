@@ -5,8 +5,7 @@
 
 <mapper namespace="com.dku.simpleBoard.mapper.CommentMapper">
     <resultMap id="commentMap" type="com.dku.simpleBoard.dto.CommentDTO">
-        <result column="board_no" property="boardNo"/>
-        <result column="user_no" property="userNo"/>
+        <result column="user_name" property="userName"/>
         <result column="comment_content" property="commentContent"/>
         <result column="comment_likes" property="commentLikes"/>
         <result column="comment_date" property="commentDate"/>

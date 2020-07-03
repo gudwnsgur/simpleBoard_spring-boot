@@ -5,8 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Alias("UserDto")
-@Getter
-@Setter
 public class UserDTO {
     private String userId;
     private String userPwd;

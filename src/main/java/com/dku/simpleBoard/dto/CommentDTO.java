@@ -7,11 +7,11 @@ import java.util.Date;
 
 @Alias("CommentDto")
 public class CommentDTO {
-    private int userNo;
-    private int boardNo;
+    private String userName;
     private String commentContent;
     private int commentLikes;
     private Date commentDate;
+
 
     public String getCommentContent() {
         return commentContent;
@@ -29,27 +29,19 @@ public class CommentDTO {
         this.commentDate = commentDate;
     }
 
-    public int getUserNo() {
-        return userNo;
-    }
-
-    public void setUserNo(int userNo) {
-        this.userNo = userNo;
-    }
-
-    public int getBoardNo() {
-        return boardNo;
-    }
-
-    public void setBoardNo(int boardNo) {
-        this.boardNo = boardNo;
-    }
-
     public int getCommentLikes() {
         return commentLikes;
     }
 
     public void setCommentLikes(int commentLikes) {
         this.commentLikes = commentLikes;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }
