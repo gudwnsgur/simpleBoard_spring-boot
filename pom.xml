@@ -18,7 +18,7 @@
         <java.version>1.8</java.version>
         <orgFreemarker.version>2.3.30</orgFreemarker.version>
         <springDataCommons.version>2.3.1.RELEASE</springDataCommons.version>
-        <MyBatis.version>3.4.6</MyBatis.version>
+        <MyBatis.version>3.5.2</MyBatis.version>
         <MyBatisSpring.version>2.0.3</MyBatisSpring.version>
         <MyBatisSpringBoot.version>2.0.1</MyBatisSpringBoot.version>
         <MySQLConnectorJava.version>8.0.18</MySQLConnectorJava.version>

@@ -15,4 +15,7 @@ public class BoardService {
     public List<BoardDTO> getBoardList() {
         return mapper.getBoardList();
     }
+    public BoardDTO getBoardByNo(Integer boardNo) {
+        return mapper.getBoardByNo(boardNo);
+    }
 }

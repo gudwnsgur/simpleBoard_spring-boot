@@ -2,23 +2,38 @@
 <html lang="ko">
 <head>
     <meta charset="utf-8">
-    <title>Simple Board</title>
+    <title>board</title>
 </head>
 <body>
+<div style="display: inline">
 
-<#--
+    <div style="display: inline">
+        <a href="http://localhost:8081/board?no=${board.boardNo}">
+            <h4 style="float:left"> ${board.boardTitle} </h4>
+        </a>
+        <h5 style="float:right; margin-right:5%;">[${board.userName}] </h5>
+    </div>
+    <br/><br/>
+    <div style="border:1px solid;
+                    margin-right: 5%; ">
+        <h5>${board.boardContent} <br/></h5>
+    </div>
 
-<details style="float:left; margin-right: 30%;">
-    <summary> <h5>Comments : ${board.commentCount} </h5></summary>
-    <p>
-        <#list commentList as comment>
+    <div style="display:inline">
+        <h5 style="float: left"> Views : ${board.boardViews} &ensp; Likes : ${board.boardLikes} &ensp; </h5>
+        <h5 style="float: right; margin-right:5%;"> ${board.boardDate} </h5>
+    </div>
+</div>
+<br/><br/><br/>
+
+<h5>Comments : ${board.commentCount} </h5>
+
+<#list commentList as comment>
     <div style="display: inline-block">
         <h5 style="float: left; margin-right: 10px">[${comment.userName}] ${comment.commentContent} </h5>
         <h5 style="float: right;">Likes:${comment.commentLikes}     ${comment.commentDate}</h5>
     </div>
-    </#list>
-    </p>
-</details>-->
+</#list>
 
 
 </body>

@@ -74,11 +74,12 @@ public class BoardDTO {
         this.boardDate = boardDate;
     }
 
-    public int getBoardNo() {
+
+    public Integer getBoardNo() {
         return boardNo;
     }
 
-    public void setBoardNo(int boardNo) {
+    public void setBoardNo(Integer boardNo) {
         this.boardNo = boardNo;
     }
 }

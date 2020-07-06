@@ -13,7 +13,9 @@
     <div style="display: inline">
 
         <div style="display: inline">
-            <h4 style="float:left"> ${board.boardTitle} </h4>
+            <a href="http://localhost:8081/board?no=${board.boardNo}">
+                <h4 style="float:left"> ${board.boardTitle} </h4>
+            </a>
             <h5 style="float:right; margin-right:5%;">[${board.userName}] </h5>
         </div>
         <br/><br/>

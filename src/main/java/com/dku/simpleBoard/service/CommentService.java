@@ -14,6 +14,6 @@ public class CommentService {
     @Autowired
     public CommentMapper mapper;
 
-    public List<CommentDTO> getCommentList() { return mapper.getCommentList(); }
+    public List<CommentDTO> getCommentListByBoardNo(Integer boardNo) { return mapper.getCommentListByBoardNo(boardNo); }
 }
 

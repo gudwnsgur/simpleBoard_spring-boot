@@ -12,12 +12,12 @@
         <result column="comment_date" property="commentDate"/>
     </resultMap>
 
-    <select id="getCommentList" resultMap="commentMap">
+    <select id="getCommentListByBoardNo" resultMap="commentMap">
 		SELECT s.user_name as user_name,
 		        c.comment_content as comment_content,
 				c.comment_likes as comment_likes,
 				c.comment_date as comment_date
         FROM boards b, users s, comments c
-        WHERE c.user_no=s.user_no AND c.board_no = ${boardNo};
+        WHERE c.user_no=s.user_no AND c.board_no='${boardNo}';
     </select>
 </mapper>

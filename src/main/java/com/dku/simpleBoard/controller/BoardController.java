@@ -26,4 +26,17 @@ public class BoardController {
         model.addAttribute("boardList", boardList);
         return "index";
     }
+
+    @GetMapping("/board")
+    public String board(Model model,
+                        @RequestParam(value="no") Integer boardNo) {
+
+        BoardDTO curBoard = boardService.getBoardByNo(boardNo);
+        List<CommentDTO> commentList = commentService.getCommentListByBoardNo(boardNo);
+
+        model.addAttribute("board", curBoard);
+        model.addAttribute("commentList", commentList);
+
+        return "board";
+    }
 }

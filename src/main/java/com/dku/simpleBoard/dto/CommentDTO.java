@@ -8,10 +8,12 @@ import java.util.Date;
 @Alias("CommentDto")
 public class CommentDTO {
     private String userName;
-    private int commentNo;
+    private Integer commentNo;
     private String commentContent;
     private int commentLikes;
     private String commentDate;
+
+    public CommentDTO(){}
 
     public String getCommentContent() {
         return commentContent;
@@ -45,11 +47,11 @@ public class CommentDTO {
         this.commentDate = commentDate;
     }
 
-    public int getCommentNo() {
+    public Integer getCommentNo() {
         return commentNo;
     }
 
-    public void setCommentNo(int commentNo) {
+    public void setCommentNo(Integer commentNo) {
         this.commentNo = commentNo;
     }
 }
