@@ -39,8 +39,7 @@ public class UserController {
 
             //System.out.println(user.getUserEmail());
             userService.insertUser(user);
-
-            return "index";
+            return "redirect:/";
         } else {
             return "join";
         }

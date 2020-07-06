@@ -7,11 +7,13 @@ import java.util.Date;
 @Alias("BoardDto")
 public class BoardDTO {
     private String userName;
+    private int boardNo;
     private String boardTitle;
     private String boardContent;
+    private int commentCount;
     private int boardViews;
     private int boardLikes;
-    private Date boardDate;
+    private String boardDate;
 
     public BoardDTO() {}
 
@@ -39,13 +41,6 @@ public class BoardDTO {
         this.boardViews = boardViews;
     }
 
-    public Date getBoardDate() {
-        return boardDate;
-    }
-
-    public void setBoardDate(Date boardDate) {
-        this.boardDate = boardDate;
-    }
 
     public int getBoardLikes() {
         return boardLikes;
@@ -61,5 +56,29 @@ public class BoardDTO {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public int getCommentCount() {
+        return commentCount;
+    }
+
+    public void setCommentCount(int commentCount) {
+        this.commentCount = commentCount;
+    }
+
+    public String getBoardDate() {
+        return boardDate;
+    }
+
+    public void setBoardDate(String boardDate) {
+        this.boardDate = boardDate;
+    }
+
+    public int getBoardNo() {
+        return boardNo;
+    }
+
+    public void setBoardNo(int boardNo) {
+        this.boardNo = boardNo;
     }
 }

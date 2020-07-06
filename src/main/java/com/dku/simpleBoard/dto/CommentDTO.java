@@ -8,10 +8,10 @@ import java.util.Date;
 @Alias("CommentDto")
 public class CommentDTO {
     private String userName;
+    private int commentNo;
     private String commentContent;
     private int commentLikes;
-    private Date commentDate;
-
+    private String commentDate;
 
     public String getCommentContent() {
         return commentContent;
@@ -19,14 +19,6 @@ public class CommentDTO {
 
     public void setCommentContent(String commentContent) {
         this.commentContent = commentContent;
-    }
-
-    public Date getCommentDate() {
-        return commentDate;
-    }
-
-    public void setCommentDate(Date commentDate) {
-        this.commentDate = commentDate;
     }
 
     public int getCommentLikes() {
@@ -43,5 +35,21 @@ public class CommentDTO {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public String getCommentDate() {
+        return commentDate;
+    }
+
+    public void setCommentDate(String commentDate) {
+        this.commentDate = commentDate;
+    }
+
+    public int getCommentNo() {
+        return commentNo;
+    }
+
+    public void setCommentNo(int commentNo) {
+        this.commentNo = commentNo;
     }
 }
