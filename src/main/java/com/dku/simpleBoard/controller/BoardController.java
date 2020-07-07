@@ -29,9 +29,9 @@ public class BoardController {
 
     @GetMapping("/board")
     public String board(Model model,
-                        @RequestParam(value="no") Integer boardNo) {
+                        @RequestParam(value = "no") Integer boardNo) {
 
-        BoardDTO curBoard = boardService.getBoardByNo(boardNo);
+        BoardDTO curBoard = boardService.getBoardByBoardNo(boardNo);
         List<CommentDTO> commentList = commentService.getCommentListByBoardNo(boardNo);
 
         model.addAttribute("board", curBoard);
@@ -39,4 +39,15 @@ public class BoardController {
 
         return "board";
     }
+    @GetMapping("/search")
+    public String getSearch(Model model,
+                            @RequestParam(value = "title") String title){
+        List<BoardDTO> boardList = boardService.getBoardListByTitle(title);
+
+        model.addAttribute("title", title);
+        model.addAttribute("boardList", boardList);
+        return "search";
+    }
+
+
 }

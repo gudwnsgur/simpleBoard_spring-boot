@@ -11,5 +11,8 @@ import com.dku.simpleBoard.dto.BoardDTO;
 @Mapper
 public interface BoardRepository {
     List<BoardDTO> getBoardList();
-    BoardDTO getBoardByNo(Integer boardNo);
+    List<BoardDTO> getBoardListByTitle(String title);
+    List<BoardDTO> getBoardListByUserName(String userName);
+
+    BoardDTO getBoardByBoardNo(Integer boardNo);
 }

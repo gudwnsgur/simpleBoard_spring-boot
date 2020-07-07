@@ -11,12 +11,22 @@ import com.dku.simpleBoard.repository.BoardRepository;
 @Service
 public class BoardService {
     @Autowired
-    public BoardRepository mapper;
+    public BoardRepository repository;
 
     public List<BoardDTO> getBoardList() {
-        return mapper.getBoardList();
+        return repository.getBoardList();
     }
-    public BoardDTO getBoardByNo(Integer boardNo) {
-        return mapper.getBoardByNo(boardNo);
+
+    public List<BoardDTO> getBoardListByTitle(String title) {
+        return repository.getBoardListByTitle(title);
     }
+    public List<BoardDTO> getBoardListByUserName(String userName) {
+        return repository.getBoardListByUserName(userName);
+    }
+
+    public BoardDTO getBoardByBoardNo(Integer boardNo) {
+        return repository.getBoardByBoardNo(boardNo);
+    }
+
+
 }

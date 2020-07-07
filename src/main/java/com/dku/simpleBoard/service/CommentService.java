@@ -11,8 +11,8 @@ import com.dku.simpleBoard.repository.CommentRepository;
 @Service
 public class CommentService {
     @Autowired
-    public CommentRepository mapper;
+    public CommentRepository repository;
 
-    public List<CommentDTO> getCommentListByBoardNo(Integer boardNo) { return mapper.getCommentListByBoardNo(boardNo); }
+    public List<CommentDTO> getCommentListByBoardNo(Integer boardNo) { return repository.getCommentListByBoardNo(boardNo); }
 }
 

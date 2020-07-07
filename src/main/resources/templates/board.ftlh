@@ -6,6 +6,18 @@
 </head>
 <body>
 <div style="display: inline">
+    <a href="http://localhost:8081/"><h3 style="float: left">Simple Board</h3>
+    </a>
+</div>
+<br/>
+<form style="float: right; margin-right: 30%;"
+      name="search" action="search" method="get">
+    <input type="search" name="title" placeholder="search for title">
+    <input type="submit" value="SEARCH">
+</form>
+<br/><br/>
+
+<div style="display: inline">
 
     <div style="display: inline">
         <a href="http://localhost:8081/board?no=${board.boardNo}">
@@ -33,6 +45,7 @@
         <h5 style="float: left; margin-right: 10px">[${comment.userName}] ${comment.commentContent} </h5>
         <h5 style="float: right;">Likes:${comment.commentLikes}     ${comment.commentDate}</h5>
     </div>
+    <br/><br/>
 </#list>
 
 

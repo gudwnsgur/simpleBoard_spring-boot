@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="utf-8">
-    <title>Simple Board</title>
+    <title>Search</title>
 </head>
 <body>
 <div style="display: inline">
@@ -17,9 +17,13 @@
 </form>
 <br/><br/>
 
-<a href="http://localhost:8081/login"> Sign in </a> <br/>
-<a href="http://localhost:8081/join"> Sign up </a> <br/>
-<a href="http://localhost:8081/users"> Go to User page </a><br/><br/>
+<#assign size=boardList?size>
+
+<#if size=0>
+    <br/>
+<h3 style="float: contour;">There is no search result about '${title}'</h3>
+</#if>
+
 <#list boardList as board>
     <br/><br/>
     <div style="display: inline">

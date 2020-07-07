@@ -12,12 +12,12 @@ import com.dku.simpleBoard.repository.UserRepository;
 public class UserService{
 
     @Autowired
-    public UserRepository mapper;
+    public UserRepository repository;
 
     public List<UserDTO> getUserList() {
-        return mapper.getUserList();
+        return repository.getUserList();
     }
     public void insertUser(UserDTO user) {
-        mapper.insertUser(user);
+        repository.insertUser(user);
     }
 }

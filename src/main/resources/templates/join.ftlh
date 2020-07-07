@@ -5,6 +5,18 @@
     <title>join page</title>
 </head>
 <body>
+<div style="display: inline">
+    <a href="http://localhost:8081/"><h3 style="float: left">Simple Board</h3>
+    </a>
+</div>
+<br/>
+<form style="float: right; margin-right: 30%;"
+      name="search" action="search" method="get">
+    <input type="search" name="title" placeholder="search by title">
+    <input type="submit" value="SEARCH">
+</form>
+<br/><br/>
+
 <h2>Sign Up</h2>
 
 <form name="join" action="join" method="post">
