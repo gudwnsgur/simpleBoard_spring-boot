@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.dku.simpleBoard.mapper.BoardMapper">
+<mapper namespace="com.dku.simpleBoard.repository.BoardRepository">
     <resultMap id="boardMap" type="com.dku.simpleBoard.dto.BoardDTO">
         <result column="user_name" property="userName"/>
         <result column="board_no" property="boardNo"/>

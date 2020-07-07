@@ -1,4 +1,4 @@
-package com.dku.simpleBoard.mapper;
+package com.dku.simpleBoard.repository;
 
 import com.dku.simpleBoard.dto.CommentDTO;
 import org.apache.ibatis.annotations.Mapper;
@@ -8,6 +8,6 @@ import java.util.List;
 
 @Repository
 @Mapper
-public interface CommentMapper {
+public interface CommentRepository {
         List<CommentDTO> getCommentListByBoardNo(Integer boardNo);
 }

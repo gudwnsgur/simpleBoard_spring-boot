@@ -58,7 +58,6 @@ public class UserController {
     public String adminUser(Model model) throws Exception {
         List<UserDTO> userList = userService.getUserList();
         model.addAttribute("userList", userList);
-        System.out.println(userList.get(0).getUserName());
         return "user";
     }
 }
