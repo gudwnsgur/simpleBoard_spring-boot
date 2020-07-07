@@ -1,11 +1,12 @@
 package com.dku.simpleBoard.service;
 
-import com.dku.simpleBoard.dto.BoardDTO;
-import com.dku.simpleBoard.repository.BoardRepository;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.dku.simpleBoard.dto.BoardDTO;
+import com.dku.simpleBoard.repository.BoardRepository;
 
 @Service
 public class BoardService {

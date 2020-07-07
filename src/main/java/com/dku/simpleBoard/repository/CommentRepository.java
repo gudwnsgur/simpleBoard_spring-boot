@@ -1,10 +1,11 @@
 package com.dku.simpleBoard.repository;
 
-import com.dku.simpleBoard.dto.CommentDTO;
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import com.dku.simpleBoard.dto.CommentDTO;
 
 @Repository
 @Mapper

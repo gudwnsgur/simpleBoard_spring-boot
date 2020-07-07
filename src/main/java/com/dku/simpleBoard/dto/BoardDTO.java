@@ -2,8 +2,6 @@ package com.dku.simpleBoard.dto;
 
 import org.apache.ibatis.type.Alias;
 
-import java.util.Date;
-
 @Alias("BoardDto")
 public class BoardDTO {
     private String userName;

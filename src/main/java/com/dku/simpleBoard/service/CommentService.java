@@ -1,11 +1,12 @@
 package com.dku.simpleBoard.service;
 
-import com.dku.simpleBoard.dto.CommentDTO;
-import com.dku.simpleBoard.repository.CommentRepository;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.dku.simpleBoard.dto.CommentDTO;
+import com.dku.simpleBoard.repository.CommentRepository;
 
 @Service
 public class CommentService {

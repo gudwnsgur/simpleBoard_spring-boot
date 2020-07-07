@@ -1,9 +1,6 @@
 package com.dku.simpleBoard.dto;
 
-
 import org.apache.ibatis.type.Alias;
-
-import java.util.Date;
 
 @Alias("CommentDto")
 public class CommentDTO {

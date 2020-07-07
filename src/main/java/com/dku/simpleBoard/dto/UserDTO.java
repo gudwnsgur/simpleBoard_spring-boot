@@ -1,8 +1,6 @@
 package com.dku.simpleBoard.dto;
 
 import org.apache.ibatis.type.Alias;
-import lombok.Getter;
-import lombok.Setter;
 
 @Alias("UserDto")
 public class UserDTO {
