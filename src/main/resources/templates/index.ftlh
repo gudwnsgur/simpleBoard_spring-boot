@@ -17,9 +17,16 @@
 </form>
 <br/><br/>
 
-<a href="http://localhost:8081/login"> Sign in </a> <br/>
-<a href="http://localhost:8081/join"> Sign up </a> <br/>
+<#if sessionId??>
+    <a href="http://localhost:8081/logout"> Sign out </a><br/>
+<#else>
+    <a href="http://localhost:8081/login"> Sign in </a> <br/>
+    <a href="http://localhost:8081/join"> Sign up </a> <br/>
+</#if>
+
+
 <a href="http://localhost:8081/users"> Go to User page </a><br/><br/>
+<br/>
 <#list boardList as board>
     <br/><br/>
     <div style="display: inline">
@@ -45,5 +52,8 @@
     <br/><br/><br/>
 </#list>
 <br/><br/>
+
+
+
 </body>
 </html>

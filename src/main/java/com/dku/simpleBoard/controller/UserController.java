@@ -1,6 +1,7 @@
 package com.dku.simpleBoard.controller;
 
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,7 +58,7 @@ public class UserController {
     public String login(Model model,
                         @RequestParam(value = "inputId") String inputId,
                         @RequestParam(value = "inputPwd") String inputPwd,
-                        HttpSession session) {
+                        HttpServletRequest req) {
 
         if(userService.findUserByUserId(inputId) == null) {
             System.out.println("No Existed User");
@@ -69,9 +70,23 @@ public class UserController {
             System.out.println("Login Failed");
             return "redirect:/login";
         }
+        HttpSession session = req.getSession();
+        session.setAttribute("sessionId", inputId);
+
         System.out.println("Login Success");
+        System.out.println(session.getAttribute("sessionId"));
         return "redirect:/";
     }
+
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        session.removeAttribute("sessionId");
+
+        return "redirect:/";
+    }
+
+
 
     @GetMapping("/users")
     public String adminUser(Model model) throws Exception {

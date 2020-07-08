@@ -12,6 +12,9 @@ import com.dku.simpleBoard.dto.BoardDTO;
 import com.dku.simpleBoard.service.CommentService;
 import com.dku.simpleBoard.service.BoardService;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class BoardController {
     @Autowired
@@ -21,9 +24,14 @@ public class BoardController {
 
 
     @GetMapping("/")
-    public String index(Model model) throws Exception {
+    public String index(Model model,
+                        HttpServletRequest request) throws Exception {
+        HttpSession session = request.getSession();
         List<BoardDTO> boardList = boardService.getBoardList();
+
         model.addAttribute("boardList", boardList);
+        model.addAttribute("sessionId", session.getAttribute("sessionId"));
+        System.out.println(session.getAttribute("sessionId"));
         return "index";
     }
 
