@@ -27,17 +27,21 @@ public class BoardController {
     public String index(Model model,
                         HttpServletRequest request) throws Exception {
         HttpSession session = request.getSession();
+        model.addAttribute("sessionId", session.getAttribute("sessionId"));
         List<BoardDTO> boardList = boardService.getBoardList();
 
         model.addAttribute("boardList", boardList);
-        model.addAttribute("sessionId", session.getAttribute("sessionId"));
         System.out.println(session.getAttribute("sessionId"));
         return "index";
     }
 
     @GetMapping("/board")
     public String board(Model model,
+                        HttpServletRequest request,
                         @RequestParam(value = "no") Integer boardNo) {
+
+        HttpSession session = request.getSession();
+        model.addAttribute("sessionId", session.getAttribute("sessionId"));
 
         BoardDTO curBoard = boardService.getBoardByBoardNo(boardNo);
         List<CommentDTO> commentList = commentService.getCommentListByBoardNo(boardNo);
@@ -51,7 +55,12 @@ public class BoardController {
     }
     @GetMapping("/search")
     public String getSearch(Model model,
+                            HttpServletRequest request,
                             @RequestParam(value = "title") String title){
+
+        HttpSession session = request.getSession();
+        model.addAttribute("sessionId", session.getAttribute("sessionId"));
+
         List<BoardDTO> boardList = boardService.getBoardListByTitle(title);
 
         model.addAttribute("title", title);

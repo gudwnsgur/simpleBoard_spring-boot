@@ -18,14 +18,17 @@
 <br/><br/>
 
 <#if sessionId??>
-    <a href="http://localhost:8081/logout"> Sign out </a><br/>
+    <div style="display: inline;">
+        <a href="http://localhost:8081/logout" style="margin-left: 60%"> Sign out </a>
+        <a href="http://localhost:8081/user" style="margin-left: 5%"> Go to user page </a><br/>
+    </div>
 <#else>
-    <a href="http://localhost:8081/login"> Sign in </a> <br/>
-    <a href="http://localhost:8081/join"> Sign up </a> <br/>
+    <div style="display: inline;">
+        <a href="http://localhost:8081/login" style="margin-left: 65%"> Sign in </a>
+        <a href="http://localhost:8081/join" style="margin-left: 5%"> Sign up </a> <br/>
+    </div>
 </#if>
 
-
-<a href="http://localhost:8081/users"> Go to User page </a><br/><br/>
 <br/>
 <#list boardList as board>
     <br/><br/>
@@ -51,9 +54,10 @@
     </div>
     <br/><br/><br/>
 </#list>
-<br/><br/>
+<br/><br/><br/>
 
 
+<a href="http://localhost:8081/users"> Go to User page </a><br/><br/>
 
 </body>
 </html>

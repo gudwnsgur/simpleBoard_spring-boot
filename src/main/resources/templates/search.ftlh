@@ -16,6 +16,18 @@
     <input type="submit" value="SEARCH">
 </form>
 <br/><br/>
+<#if sessionId??>
+    <div style="display: inline;">
+        <a href="http://localhost:8081/logout" style="margin-left: 60%"> Sign out </a>
+        <a href="http://localhost:8081/user" style="margin-left: 5%"> Go to user page </a><br/>
+    </div>
+<#else>
+    <div style="display: inline;">
+        <a href="http://localhost:8081/login" style="margin-left: 65%"> Sign in </a>
+        <a href="http://localhost:8081/join" style="margin-left: 5%"> Sign up </a> <br/>
+    </div>
+</#if>
+
 
 <#assign size=boardList?size>
 

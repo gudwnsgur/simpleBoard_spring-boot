@@ -17,10 +17,25 @@
 </form>
 <br/><br/>
 
-<h3> user Information</h3>
-<#list userList as user>
-      ${user_index+1} ${user.userName} ${user.userTell}  <br/>
-</#list>
-</h4>
+<#if sessionId??>
+    <div style="display: inline;">
+        <a href="http://localhost:8081/logout" style="margin-left: 60%"> Sign out </a>
+        <a href="http://localhost:8081/user" style="margin-left: 5%"> Go to user page </a><br/>
+    </div>
+<#else>
+    <div style="display: inline;">
+        <a href="http://localhost:8081/login" style="margin-left: 65%"> Sign in </a>
+        <a href="http://localhost:8081/join" style="margin-left: 5%"> Sign up </a> <br/>
+    </div>
+</#if>
+
+<h2> my information</h2><br/><br/>
+
+<h3> Id : ${user.userId}</h3><br/>
+<h3> Name : ${user.userName}</h3><br/>
+<h3> Email : ${user.userEmail}</h3><br/>
+<h3> Phone Number : ${user.userTell}</h3><br/>
+
+
 </body>
 </html>

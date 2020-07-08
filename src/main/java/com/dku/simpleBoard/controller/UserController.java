@@ -25,6 +25,7 @@ public class UserController {
 
     @PostMapping("/join")
     public String join(Model model,
+                       HttpServletRequest request,
                        @RequestParam(value = "inputId") String inputId,
                        @RequestParam(value = "inputPwd1") String inputPwd1,
                        @RequestParam(value = "inputPwd2") String inputPwd2,
@@ -34,6 +35,10 @@ public class UserController {
     ) {
 
         if (inputPwd1.equals(inputPwd2)) {
+
+            HttpSession session = request.getSession();
+            session.setAttribute("sessionId", inputId);
+
             UserDTO user = new UserDTO();
             user.setUserId(inputId);
             user.setUserPwd(inputPwd1);
@@ -86,12 +91,22 @@ public class UserController {
         return "redirect:/";
     }
 
+    @GetMapping("/user")
+    public String user(Model model,
+                       HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        String userId = (String)session.getAttribute("sessionId");
+        UserDTO user = userService.findUserByUserId(userId);
+
+        model.addAttribute("user", user);
+        return "user";
+    }
 
 
     @GetMapping("/users")
     public String adminUser(Model model) throws Exception {
         List<UserDTO> userList = userService.getUserList();
         model.addAttribute("userList", userList);
-        return "user";
+        return "users";
     }
 }
