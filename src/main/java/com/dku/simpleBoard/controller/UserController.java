@@ -1,6 +1,7 @@
 package com.dku.simpleBoard.controller;
 
 import java.util.List;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +10,7 @@ import org.springframework.ui.Model;
 
 import com.dku.simpleBoard.dto.UserDTO;
 import com.dku.simpleBoard.service.UserService;
+
 
 @Controller
 public class UserController {
@@ -46,13 +48,29 @@ public class UserController {
         }
     }
 
+    @GetMapping("/login")
+    public String login(Model model) {
+        return "login";
+    }
+
     @PostMapping("/login")
-    public String login(@RequestParam(value = "inputId", required = false)
-                                String inputId) {
-        String user = "gudwnsgur";
-        if (user.equals(inputId)) {
-            return "index";
-        } else return "acdvadvda";
+    public String login(Model model,
+                        @RequestParam(value = "inputId") String inputId,
+                        @RequestParam(value = "inputPwd") String inputPwd,
+                        HttpSession session) {
+
+        if(userService.findUserByUserId(inputId) == null) {
+            System.out.println("No Existed User");
+            return "redirect:/login";
+        }
+
+        if(userService.matchUserPwdByUserId(userService.findUserByUserId(inputId).getUserId(),
+                                            inputPwd) == null) {
+            System.out.println("Login Failed");
+            return "redirect:/login";
+        }
+        System.out.println("Login Success");
+        return "redirect:/";
     }
 
     @GetMapping("/users")

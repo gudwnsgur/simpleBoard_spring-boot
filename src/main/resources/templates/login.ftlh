@@ -5,7 +5,6 @@
     <title>login</title>
 </head>
 <body>
-<h1> login</h1>
 <div style="display: inline">
     <a href="http://localhost:8081/"><h3 style="float: left">Simple Board</h3>
     </a>
@@ -13,16 +12,19 @@
 <br/>
 <form style="float: right; margin-right: 30%;"
       name="search" action="search" method="get">
-    <input type="search" name="title" placeholder="search for title">
+    <input type="search" name="title" placeholder="search by title">
     <input type="submit" value="SEARCH">
 </form>
 <br/><br/>
 
-<!--
-<h1> Check My Id & Password </h1>
-<h3>My ID : ${id}</h3>
-<h3>My Password : ${pwd}</h3>
--->
+<h2>Sign in to simple board</h2>
+
+<form name="login" action="login" method="post">
+    <h3> id </h3> <input type="text" name="inputId">
+    <h3> Password </h3> <input type="password" name="inputPwd">
+    <br/><br/>
+    <input type="submit" value="Sign in">
+</form>
 
 </body>
 </html>

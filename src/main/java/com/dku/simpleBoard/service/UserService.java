@@ -20,4 +20,8 @@ public class UserService{
     public void insertUser(UserDTO user) {
         repository.insertUser(user);
     }
+
+    public UserDTO findUserByUserId(String userId) {return repository.findUserByUserId(userId);}
+    public UserDTO matchUserPwdByUserId(String userId, String inputPwd) {
+        return repository.matchUserPwdByUserId(userId, inputPwd);}
 }

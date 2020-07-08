@@ -16,6 +16,12 @@
     <select id="getUserList" resultMap="userMap">
                 SELECT user_name, user_tell FROM users;
     </select>
+    <select id="findUserByUserId" resultMap="userMap">
+        SELECT * FROM users WHERE user_id = '${userId}';
+    </select>
+    <select id="matchUserPwdByUserId" resultMap="userMap">
+        SELECT * FROM users WHERE user_id = '${userId}' AND user_pwd = '${inputPwd}';
+    </select>
 
     <insert id="insertUser" parameterType="UserDTO">
                 INSERT INTO users(user_id, user_pwd, user_name, user_email, user_tell, user_auth)

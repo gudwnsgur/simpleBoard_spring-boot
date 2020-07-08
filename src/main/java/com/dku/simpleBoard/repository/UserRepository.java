@@ -12,4 +12,7 @@ import com.dku.simpleBoard.dto.UserDTO;
 public interface UserRepository {
     List<UserDTO> getUserList();
     void insertUser(UserDTO user);
+
+    UserDTO findUserByUserId(String userId);
+    UserDTO matchUserPwdByUserId(String userId, String inputPwd);
 }
