@@ -34,6 +34,8 @@ public class BoardController {
         BoardDTO curBoard = boardService.getBoardByBoardNo(boardNo);
         List<CommentDTO> commentList = commentService.getCommentListByBoardNo(boardNo);
 
+        boardService.updateViewsOnBoard(boardNo);
+
         model.addAttribute("board", curBoard);
         model.addAttribute("commentList", commentList);
 
@@ -48,6 +50,7 @@ public class BoardController {
         model.addAttribute("boardList", boardList);
         return "search";
     }
+
 
 
 }

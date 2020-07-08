@@ -15,4 +15,6 @@ public interface BoardRepository {
     List<BoardDTO> getBoardListByUserName(String userName);
 
     BoardDTO getBoardByBoardNo(Integer boardNo);
+
+    void updateViewsOnBoard(Integer boardNo);
 }

@@ -28,5 +28,8 @@ public class BoardService {
         return repository.getBoardByBoardNo(boardNo);
     }
 
+    public void updateViewsOnBoard(Integer boardNo) {
+        repository.updateViewsOnBoard(boardNo);
+    }
 
 }

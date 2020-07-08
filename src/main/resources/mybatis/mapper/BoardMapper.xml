@@ -64,4 +64,10 @@
             WHERE b.user_no = s.user_no AND c.board_no = b.board_no AND b.board_title LIKE CONCAT('%',#{title},'%')
             GROUP BY b.board_no;
     </select>
+
+    <update id="updateViewsOnBoard" parameterType="BoardDTO">
+        UPDATE boards
+        SET board_views = board_views+1
+        WHERE board_no = ${boardNo};
+    </update>
 </mapper>
