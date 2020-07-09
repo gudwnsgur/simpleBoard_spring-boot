@@ -27,6 +27,7 @@
         <a href="http://localhost:8081/join" style="margin-left: 5%"> Sign up </a> <br/>
     </div>
 </#if>
+<#assign boardNo = board.boardNo>
 
 <div style="display: inline">
 
@@ -43,7 +44,11 @@
     </div>
 
     <div style="display:inline">
-        <h5 style="float: left"> Views : ${board.boardViews} &ensp; Likes : ${board.boardLikes} &ensp; </h5>
+        <h5 style="float: left"> Views : ${board.boardViews}
+            &ensp;<form name="likes" action="board/${boardNo}/likes " method="post">
+                <input type="submit" value="Likes : ${board.boardLikes}">
+            </form>&ensp;
+        </h5>
         <h5 style="float: right; margin-right:5%;"> ${board.boardDate} </h5>
     </div>
 </div>
@@ -58,7 +63,6 @@
     </div>
     <br/><br/>
 </#list>
-
 
 </body>
 </html>

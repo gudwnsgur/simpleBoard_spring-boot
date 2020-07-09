@@ -17,4 +17,6 @@ public interface BoardRepository {
     BoardDTO getBoardByBoardNo(Integer boardNo);
 
     void updateViewsOnBoard(Integer boardNo);
+    void increaseLikeByBoardId(Integer boardNo);
+    void decreaseLikeByBoardId(Integer boardNo);
 }

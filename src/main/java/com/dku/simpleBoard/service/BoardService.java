@@ -31,5 +31,11 @@ public class BoardService {
     public void updateViewsOnBoard(Integer boardNo) {
         repository.updateViewsOnBoard(boardNo);
     }
+    public void increaseLikeByBoardId(Integer boardNo) {
+        repository.increaseLikeByBoardId(boardNo);
+    }
+    public void decreaseLikeByBoardId(Integer boardNo) {
+        repository.decreaseLikeByBoardId(boardNo);
+    }
 
 }

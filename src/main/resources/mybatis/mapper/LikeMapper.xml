@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dku.simpleBoard.repository.LikeRepository">
+    <resultMap id="likeMap" type="com.dku.simpleBoard.dto.LikeDTO">
+        <result column="user_no" property="userNo"/>
+        <result column="board_no" property="boardNo"/>
+        <result column="likes" property="likes"/>
+    </resultMap>
+
+    <select id="checkLikes" resultMap="likeMap">
+        SELECT * FROM likes WHERE board_no = '${boardNo}' AND user_no = '${userNo}';
+    </select>
+
+    <insert id="insertLikes" parameterType="LikeDTO">
+        INSERT INTO likes VALUES('${userNo}', '${boardNo}', 1);
+    </insert>
+
+    <delete id="deleteLikes" parameterType="LikeDTO">
+        DELETE FROM likes WHERE user_no = '${userNo}' AND boacrd_no = '${boardNo}';
+    </delete>
+
+</mapper>

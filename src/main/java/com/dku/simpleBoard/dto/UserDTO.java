@@ -4,6 +4,7 @@ import org.apache.ibatis.type.Alias;
 
 @Alias("UserDto")
 public class UserDTO {
+    private Integer userNo;
     private String userId;
     private String userPwd;
     private String userName;
@@ -61,6 +62,13 @@ public class UserDTO {
         this.userTell = userTell;
     }
 
+    public Integer getUserNo() {
+        return userNo;
+    }
+
+    public void setUserNo(Integer userNo) {
+        this.userNo = userNo;
+    }
 }
 
 

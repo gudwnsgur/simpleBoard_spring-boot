@@ -70,4 +70,10 @@
         SET board_views = board_views+1
         WHERE board_no = ${boardNo};
     </update>
+    <update id="increaseLikeByBoardId" parameterType="BoardDTO">
+        UPDATE boards SET board_likes=board_likes+1 WHERE board_no='${boardNo}';
+    </update>
+    <update id="decreaseLikeByBoardId" parameterType="BoardDTO">
+        UPDATE boards SET board_likes=board_likes-1 WHERE board_no='${boardNo}';
+    </update>
 </mapper>
