@@ -40,22 +40,22 @@
     <br/><br/>
     <div style="border:1px solid;
                     margin-right: 5%; ">
-        <h5>${board.boardContent} <br/></h5>
+        <h5>${board.boardContent}</h5>
     </div>
+    <h5 style="float: right; margin-right:5%;"> ${board.boardDate} </h5>
+    <br/>
 
     <div style="display:inline">
-        <h5 style="float: left"> Views : ${board.boardViews}
-            &ensp;<form name="likes" action="board/${boardNo}/likes " method="post">
-                <input type="submit" value="Likes : ${board.boardLikes}">
-            </form>&ensp;
-        </h5>
-        <h5 style="float: right; margin-right:5%;"> ${board.boardDate} </h5>
+        <h5> Views : ${board.boardViews}     </h5>
+        <form name="likes" action="board/${boardNo}/likes " method="post">
+            <input type="submit" value="Likes : ${board.boardLikes}">
+        </form>&ensp;
     </div>
 </div>
+<br/><br/>
+
+<h5 style="float: left">Comments : ${board.commentCount} </h5>
 <br/><br/><br/>
-
-<h5>Comments : ${board.commentCount} </h5>
-
 <#list commentList as comment>
     <div style="display: inline-block">
         <h5 style="float: left; margin-right: 10px">[${comment.userName}] ${comment.commentContent} </h5>
