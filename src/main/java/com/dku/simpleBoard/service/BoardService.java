@@ -28,6 +28,9 @@ public class BoardService {
         return repository.getBoardByBoardNo(boardNo);
     }
 
+    public void insertBoard(BoardDTO board) {
+        repository.insertBoard(board);
+    }
     public void updateViewsOnBoard(Integer boardNo) {
         repository.updateViewsOnBoard(boardNo);
     }

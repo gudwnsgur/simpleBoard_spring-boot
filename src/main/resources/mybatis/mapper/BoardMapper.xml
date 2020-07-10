@@ -6,6 +6,7 @@
 <mapper namespace="com.dku.simpleBoard.repository.BoardRepository">
     <resultMap id="boardMap" type="com.dku.simpleBoard.dto.BoardDTO">
         <result column="user_name" property="userName"/>
+        <result column="user_no" property="userNo"/>
         <result column="board_no" property="boardNo"/>
         <result column="board_title" property="boardTitle"/>
         <result column="board_content" property="boardContent"/>
@@ -14,18 +15,28 @@
         <result column="board_date" property="boardDate"/>
     </resultMap>
 
+    <insert id="insertBoard" parameterType="BoardDto">
+        INSERT INTO boards(user_no, board_title, board_content)
+        VALUES ('${userNo}', '${boardTitle}', '${boardContent}');
+    </insert>
+
     <select id="getBoardList"  resultMap="boardMap">
         SELECT s.user_name as user_name,
                b.board_no as board_no,
                b.board_title as board_title,
                b.board_content as board_content,
                b.board_views as board_views,
-			   count(c.comment_no) as commentCount,
+			   (
+				SELECT count(*)
+				FROM comments
+				WHERE board_no=b.board_no
+			    ) as commentCount,
                b.board_likes as board_likes,
                b.board_date as board_date
         FROM boards b, users s, comments c
-        WHERE b.user_no = s.user_no AND c.board_no = b.board_no
-        GROUP BY b.board_no;
+        WHERE b.user_no = s.user_no
+        GROUP BY b.board_no
+        ORDER BY b.board_no;
     </select>
     <select id="getBoardByBoardNo" resultMap="boardMap">
         SELECT s.user_name as user_name,
@@ -33,12 +44,17 @@
                b.board_title as board_title,
                b.board_content as board_content,
                b.board_views as board_views,
-			   count(c.comment_no) as commentCount,
+               (
+				SELECT count(*)
+				FROM comments
+				WHERE board_no='${boardNo}'
+				) as commentCount,
                b.board_likes as board_likes,
                b.board_date as board_date
         FROM boards b, users s, comments c
-        WHERE b.user_no = s.user_no AND c.board_no = b.board_no AND b.board_no='${boardNo}'
-    </select>
+        WHERE b.user_no = s.user_no AND b.board_no='${boardNo}'
+        GROUP BY b.board_no;
+</select>
     <select id="getBoardListByUserName" resultMap="boardMap">
         SELECT s.user_name as user_name,
                b.board_no as board_no,

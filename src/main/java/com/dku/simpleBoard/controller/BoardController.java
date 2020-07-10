@@ -6,6 +6,8 @@ import com.dku.simpleBoard.dto.UserDTO;
 import com.dku.simpleBoard.service.LikeService;
 import com.dku.simpleBoard.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
@@ -17,6 +19,8 @@ import com.dku.simpleBoard.service.BoardService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
+import static com.mysql.cj.conf.PropertyKey.logger;
 
 @Controller
 public class BoardController {
@@ -37,7 +41,7 @@ public class BoardController {
         List<BoardDTO> boardList = boardService.getBoardList();
 
         model.addAttribute("boardList", boardList);
-        System.out.println(session.getAttribute("sessionId"));
+        // System.out.println(session.getAttribute("sessionId"));
         return "index";
     }
 
@@ -58,6 +62,36 @@ public class BoardController {
         model.addAttribute("commentList", commentList);
 
         return "board";
+    }
+    @GetMapping("/write")
+    public String write(Model model,
+                        HttpServletRequest request){
+        HttpSession session = request.getSession();
+        model.addAttribute("sessionId", session.getAttribute("sessionId"));
+        return "write";
+    }
+
+    @PostMapping("/write")
+    public String wirte(Model model,
+                        HttpServletRequest request,
+                        @RequestParam(value="title") String title,
+                        @RequestParam(value="content") String content) throws Exception {
+
+
+        HttpSession session = request.getSession();
+        model.addAttribute("sessionId", session.getAttribute("sessionId"));
+
+        try {
+            UserDTO user = userService.findUserByUserId((String) session.getAttribute("sessionId"));
+            BoardDTO board = new BoardDTO(user.getUserNo(), title, content);
+
+            boardService.insertBoard(board);
+
+        } catch (Exception e) {
+            System.out.println(ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build());
+            return "redirect:/write";
+        }
+        return "redirect:/";
     }
 
     @GetMapping("/search")
@@ -83,7 +117,7 @@ public class BoardController {
         HttpSession session = request.getSession();
         String sessionId = (String) session.getAttribute("sessionId");
 
-        System.out.println("boardNo" + boardNo);
+        // System.out.println("boardNo" + boardNo);
 
         if (sessionId == null) {
             System.out.println("로그인 후 사용할 수 있음");
@@ -105,5 +139,4 @@ public class BoardController {
         }
         return "redirect:/board?no={boardNo}";
     }
-
 }

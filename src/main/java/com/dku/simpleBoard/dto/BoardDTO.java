@@ -5,6 +5,7 @@ import org.apache.ibatis.type.Alias;
 @Alias("BoardDto")
 public class BoardDTO {
     private String userName;
+    private int userNo;
     private int boardNo;
     private String boardTitle;
     private String boardContent;
@@ -14,6 +15,11 @@ public class BoardDTO {
     private String boardDate;
 
     public BoardDTO() {}
+    public BoardDTO(Integer userNo, String boardTitle, String boardContent) {
+        this.userNo = userNo;
+        this.boardTitle = boardTitle;
+        this.boardContent = boardContent;
+    }
 
     public String getBoardTitle() {
         return boardTitle;
@@ -79,5 +85,13 @@ public class BoardDTO {
 
     public void setBoardNo(Integer boardNo) {
         this.boardNo = boardNo;
+    }
+
+    public int getUserNo() {
+        return userNo;
+    }
+
+    public void setUserNo(int userNo) {
+        this.userNo = userNo;
     }
 }
