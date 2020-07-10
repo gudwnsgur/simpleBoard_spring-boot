@@ -5,6 +5,7 @@
     <title>join page</title>
 </head>
 <body>
+<!-- Header -->
 <div style="display: inline">
     <a href="http://localhost:8081/"><h3 style="float: left">Simple Board</h3>
     </a>
@@ -12,10 +13,26 @@
 <br/>
 <form style="float: right; margin-right: 30%;"
       name="search" action="search" method="get">
-    <input type="search" name="title" placeholder="search by title">
+    <input type="search" name="title" placeholder="search for title">
     <input type="submit" value="SEARCH">
 </form>
 <br/><br/>
+<!-- end of Header -->
+
+<!-- Nav -->
+<#if sessionId??>
+    <div style="float: right">
+        <a href="http://localhost:8081/logout" style="margin-right: 5%"> SignOut </a> <br/>
+        <a href="http://localhost:8081/user" style="margin-right: 5%"> userPage </a><br/>
+    </div>
+    <a href="http://localhost:8081/write" style="float: right; margin-right: 5%"> Write Content </a>
+<#else>
+    <div style="float: right">
+        <a href="http://localhost:8081/login" style="margin-right: 5%"> SignIn </a>
+        <a href="http://localhost:8081/join" style="margin-right: 5%"> SignUp </a> <br/>
+    </div>
+</#if>
+<!-- end of Nav -->
 
 <h2>Sign Up</h2>
 
