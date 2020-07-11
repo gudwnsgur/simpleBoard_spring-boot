@@ -62,7 +62,8 @@
 </div>
 <br/><br/>
 
-<h5 style="float: left">Comments : ${board.commentCount} </h5>
+<h5 style="float: left ">Comments : ${board.commentCount} </h5>
+
 <br/><br/><br/>
 <#list commentList as comment>
     <div style="display: inline-block">
@@ -71,6 +72,9 @@
     </div>
     <br/><br/>
 </#list>
+
+
+<a href="http://localhost:8081/board/${boardNo}/comment" style="float: right; margin-right: 5%"> Write Comment </a>
 
 </body>
 </html>

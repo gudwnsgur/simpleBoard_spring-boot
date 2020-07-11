@@ -33,7 +33,6 @@
     </div>
 </#if>
 <!-- end of Nav -->
-
 <h2>Sign Up</h2>
 
 <form name="join" action="join" method="post">

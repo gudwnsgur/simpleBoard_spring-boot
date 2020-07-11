@@ -20,7 +20,6 @@ import com.dku.simpleBoard.service.BoardService;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import static com.mysql.cj.conf.PropertyKey.logger;
 
 @Controller
 public class BoardController {
@@ -137,6 +136,32 @@ public class BoardController {
             boardService.decreaseLikeByBoardId(boardNo);
             System.out.println("unlike!");
         }
+        return "redirect:/board?no={boardNo}";
+    }
+
+
+    @GetMapping("/board/{boardNo}/comment")
+    public String comment(Model model,
+                          HttpServletRequest request,
+                          @PathVariable Integer boardNo) {
+        HttpSession session = request.getSession();
+        String sessionId = (String)session.getAttribute("sessionId");
+
+        model.addAttribute("sessionId", sessionId);
+        model.addAttribute("boardNo", boardNo);
+        System.out.println(boardNo);
+        return "comment";
+    }
+
+    @PostMapping("/board/{boardNo}/comment")
+    public String comment(Model model,
+                          HttpServletRequest request,
+                          @PathVariable Integer boardNo) {
+
+
+        HttpSession session = request.getSession();
+        String sessionId = (String)session.getAttribute("sessionId");
+
         return "redirect:/board?no={boardNo}";
     }
 }
