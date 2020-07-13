@@ -11,4 +11,5 @@ import com.dku.simpleBoard.dto.CommentDTO;
 @Mapper
 public interface CommentRepository {
         List<CommentDTO> getCommentListByBoardNo(Integer boardNo);
+        void insertComment(CommentDTO comment);
 }

@@ -73,8 +73,9 @@
     <br/><br/>
 </#list>
 
-
+<#if sessionId??>
 <a href="http://localhost:8081/board/${boardNo}/comment" style="float: right; margin-right: 5%"> Write Comment </a>
+</#if>
 
 </body>
 </html>

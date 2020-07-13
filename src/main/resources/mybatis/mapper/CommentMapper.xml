@@ -22,4 +22,8 @@
         WHERE c.user_no=s.user_no AND c.board_no='${boardNo}'
         GROUP BY c.comment_no;
     </select>
+    <insert id="insertComment" parameterType="CommentDTO">
+        INSERT INTO comments(board_no, user_no, comment_content)
+        VALUES('${boardNo}', '${userNo}', '${commentContent}');
+    </insert>
 </mapper>

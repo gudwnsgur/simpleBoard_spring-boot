@@ -14,6 +14,9 @@ public class CommentService {
     public CommentRepository repository;
 
     public List<CommentDTO> getCommentListByBoardNo(Integer boardNo) { return repository.getCommentListByBoardNo(boardNo); }
+    public void insertComment(CommentDTO comment) {
+        repository.insertComment(comment);
+    };
 
 }
 
