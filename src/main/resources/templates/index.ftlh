@@ -7,7 +7,20 @@
 <body>
 
 <!-- Header -->
-<div style="display: inline">
+<div style="position: fixed;
+top: 0;
+left: 0;
+right: 0;
+
+height: 75px;
+padding: 1rem;
+color: white;
+background: skyblue;
+font-weight: bold;
+display: flex;
+justify-content: space-between;
+align-items: center;">
+<div style="display: inline; ">
     <a href="http://localhost:8081/"><h3 style="float: left">Simple Board</h3>
     </a>
 </div>
@@ -33,9 +46,12 @@
         <a href="http://localhost:8081/join" style="margin-right: 5%"> SignUp </a> <br/>
     </div>
 </#if>
+</div>
+<br/><br/><br/><br/>
+
 <!-- end of Nav -->
 
-<br/>
+
 <#list boardList as board>
     <br/><br/>
     <div style="display: inline">
