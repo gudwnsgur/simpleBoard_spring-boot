@@ -21,7 +21,7 @@
         <MyBatis.version>3.5.2</MyBatis.version>
         <MyBatisSpring.version>2.0.3</MyBatisSpring.version>
         <MyBatisSpringBoot.version>2.0.1</MyBatisSpringBoot.version>
-        <MySQLConnectorJava.version>8.0.18</MySQLConnectorJava.version>
+        <MySQLConnectorJava.version>8.0.28</MySQLConnectorJava.version>
         <jdbc.version>2.3.0.RELEASE</jdbc.version>
     </properties>
 
